@@ -4,9 +4,20 @@
 # 소수가 되는 경우의 개수를 return 하도록 solution 함수를 완성해주세요.
 
 import itertools
-def solution(nums):
-    answer = -1
-    return answer
 
-nums = [1,2,3,4,5,6,7]
-print(list(itertools.combinations(nums,3)))
+def solution(nums):
+    nums_ = list(itertools.combinations(nums,3))
+    for i in range(len(nums_)):
+        nums_[i] = nums_[i][0] + nums_[i][1] + nums_[i][2]
+    #nums_ = list(set(nums_))  # 중복 제거하면 안됨!! 다른 조합이면 다른 케이스로 봐야함
+    answer = 0
+    for n in nums_:
+        for i in range(2,n):
+            if n%i == 0:
+                break
+            else :
+                if i == n-1:
+                    answer += 1
+                else :
+                    continue    
+    return answer
