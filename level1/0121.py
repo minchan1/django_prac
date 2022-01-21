@@ -21,3 +21,16 @@ def solution(array, commands):
             answer.append(array_i[commands[i][2]-1])
     return answer
     # 더 줄여보기
+
+# https://programmers.co.kr/learn/courses/30/lessons/42576
+# 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 
+# 완주한 선수들의 이름이 담긴 배열 completion이 주어질 때, 
+# 완주하지 못한 선수의 이름을 return 하도록 solution 함수를 작성해주세요.
+
+def solution(participant, completion):
+    d = dict()
+    for p in participant:
+        d[p] = d.get(p,0)+1
+    for c in completion:
+        d[c] -= 1
+    return list(i for i, j in d.items() if j == 1).pop()
