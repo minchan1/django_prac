@@ -22,3 +22,23 @@ def solution(n, lost, reserve):
         if m >=1 :
             answer +=1
     return answer-2
+
+# https://programmers.co.kr/learn/courses/30/lessons/12901
+
+def solution(a, b):
+    a = a-1
+    day = ['THU','FRI','SAT','SUN','MON','TUE','WED']
+    month_31 = [1,3,5,7,8,10,12]
+    month_30 = [4,6,9,11]
+    month_29 = [2]
+    while a!=0:
+        if a in month_31:
+            a -= 1
+            b += 31
+        elif a in month_30:
+            a -= 1
+            b += 30
+        else :
+            a -= 1
+            b += 29
+    return day[b%7]
