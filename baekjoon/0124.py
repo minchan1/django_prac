@@ -1,5 +1,5 @@
+# 그리디
 # https://www.acmicpc.net/problem/10162
-# A 300 , B 60 ,  C 10
 
 T = int(input())
 count_A = 0
@@ -22,6 +22,7 @@ else:
             count_C += 1 
     print('{0} {1} {2}'.format(count_A,count_B,count_C))
 
+# 그리디, 정렬
 # https://www.acmicpc.net/problem/11399
 
 n,Pi = input(),input()
