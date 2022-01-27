@@ -8,3 +8,58 @@
 # if n%2==0:
 
 # print(count)
+
+# fibo = [0,1]
+# n=int(input())
+# for i in range(n):
+#         fibo.append(fibo[i] + fibo[i+1])
+# print(fibo[n])
+
+# import re
+# a = re.split('[-|+|*]', input())
+# loc = []
+# result=''
+# temp = ''.join(i for i in a)
+# for i in temp:
+
+import re
+temp = input()
+buho = [i for i in temp if i=='-' or i=='+']
+nums = re.split('[-|+|*]',temp)
+for i in range(len(nums)):
+    nums[i] = nums[i].lstrip('0')
+for i in range(len(buho)):
+    nums.insert(2*i+1,buho[i])
+# print(nums)
+data=''.join(nums)
+# print(data)
+# data = input()
+result = 10**13
+for i in range(len(data)):
+    for j in range(i,len(data)+1):
+        try:
+            results = eval(data[:i] + '(' + data[i:j] + ')' + data[j:])
+            result = min(result,results)
+        except Exception as ex:
+            continue
+print(result)
+
+# a = nums
+# loc=[]
+# result=''
+# for i in range(len(a)):
+#     if a[i]=='-':
+#         loc.append(i)
+# for i in range(len(loc)):
+#     if i%2==0:
+#         a.insert(loc[i]+1,'(')
+#     else:
+#         a.insert(loc[i]-1,')')
+# if a.count('(')%2!=0:
+#     a.append(')')
+# for i in a:
+#     result += i
+# for i in result:
+#     try: i = int(i)
+#     except: pass
+# print(eval(result))
