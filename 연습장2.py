@@ -44,22 +44,3 @@ for i in range(len(data)):
             continue
 print(result)
 
-# a = nums
-# loc=[]
-# result=''
-# for i in range(len(a)):
-#     if a[i]=='-':
-#         loc.append(i)
-# for i in range(len(loc)):
-#     if i%2==0:
-#         a.insert(loc[i]+1,'(')
-#     else:
-#         a.insert(loc[i]-1,')')
-# if a.count('(')%2!=0:
-#     a.append(')')
-# for i in a:
-#     result += i
-# for i in result:
-#     try: i = int(i)
-#     except: pass
-# print(eval(result))
