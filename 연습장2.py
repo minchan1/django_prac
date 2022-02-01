@@ -1,46 +1,42 @@
 
-# count = 0
-# n = int(input())
-# if (n-1)%
-# if n%3==0:
-#     n = n/3
-#     count += 1
-# if n%2==0:
+# import heapq
+# def solution(scoville, K):
+#     answer = 0
+#     scoville.sort()
+#     while scoville[0] < K:
+#         if len(scoville) <= 1:
+#             return -1
+#         else:
+#             small = heapq.heappop(scoville)
+#             small2 = heapq.heappop(scoville)
+#             heapq.heappush(scoville, (small + (small2 * 2)))
+#             answer += 1
+#     return answer
 
-# print(count)
 
-# fibo = [0,1]
-# n=int(input())
-# for i in range(n):
-#         fibo.append(fibo[i] + fibo[i+1])
-# print(fibo[n])
 
-# import re
-# a = re.split('[-|+|*]', input())
+# numbers = [3, 30, 34, 5, 9]
+# for i in range(len(numbers)):
+#     numbers[i] = str(numbers[i])
+# numbers.sort()
 # loc = []
-# result=''
-# temp = ''.join(i for i in a)
-# for i in temp:
+# for i in range(len(numbers)-1):
+#     if numbers[i][0] != numbers[i+1][0]:
+#         loc.append(i+1)
 
-import re
-temp = input()
-buho = [i for i in temp if i=='-' or i=='+']
-nums = re.split('[-|+|*]',temp)
-for i in range(len(nums)):
-    nums[i] = nums[i].lstrip('0')
-for i in range(len(buho)):
-    nums.insert(2*i+1,buho[i])
-# print(nums)
-data=''.join(nums)
-# print(data)
-# data = input()
-result = 10**13
-for i in range(len(data)):
-    for j in range(i,len(data)+1):
-        try:
-            results = eval(data[:i] + '(' + data[i:j] + ')' + data[j:])
-            result = min(result,results)
-        except Exception as ex:
-            continue
-print(result)
+# print(loc)
 
+
+n = list(input())
+sum_ = 0
+for i in n:
+    sum_ += int(i)
+if sum_%3==0 and '0' in n:
+    n = sorted(n)
+    # n.reverse()
+    ans = ''
+    for i in range(len(n)):
+        ans=ans+n.pop()
+    print(ans)
+else:
+    print(-1)
