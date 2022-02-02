@@ -27,16 +27,35 @@
 # print(loc)
 
 
-n = list(input())
-sum_ = 0
-for i in n:
-    sum_ += int(i)
-if sum_%3==0 and '0' in n:
-    n = sorted(n)
-    # n.reverse()
-    ans = ''
-    for i in range(len(n)):
-        ans=ans+n.pop()
-    print(ans)
-else:
-    print(-1)
+from collections import deque
+answer = 0
+people=[70, 50, 80, 50]
+limit=100
+deq = deque(sorted(people))
+# while deq:
+#     if len(deq) == 1:
+#         answer += 1
+#         break
+#     if deq[0] + deq[-1] <= limit:
+#         deq.pop()
+#         deq.popleft()
+#     else:
+#         deq.pop()
+#     answer += 1
+print(deque)
+
+from collections import deque
+def solution(people, limit):
+    answer = 0
+    deq = deque(sorted(people))
+    while deq:
+        if len(deq) == 1:
+            answer += 1
+            break
+        if deq[0] + deq[-1] <= limit:
+            deq.pop()
+            deq.popleft()
+        else:
+            deq.pop()
+        answer += 1
+    return answer
