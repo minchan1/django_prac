@@ -13,3 +13,17 @@ for i in cro:
         tmp -= len(i)*word.count(i)
         tmp += word.count('dz=')*2
 print(cnt+tmp)
+
+# https://www.acmicpc.net/problem/2751
+
+from sys import stdin
+# 입력 여러개 받을때 시간단축
+from collections import deque
+# deque를 써서 시간단축
+n = int(stdin.readline())
+nums = []
+for i in range(n):
+    nums.append(int(stdin.readline()))
+nums = deque(sorted(nums))
+for i in range(n):
+    print(nums.popleft())
