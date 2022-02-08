@@ -1,20 +1,9 @@
 
-from sys import stdin
-from collections import deque
-n = int(stdin.readline())
-nums = []
-for i in range(n):
-    nums.append(int(stdin.readline()))
-nums = deque(sorted(nums))
-for i in range(n):
-    print(nums.popleft())
-
-
-# from collections import deque
-# n = int(input())
-# nums = deque()
-# for i in range(n):
-#     nums.append(int(input()))
-# nums.sort()
-# for i in range(n):
-#     print(nums.popleft())
+n = int(input())
+points = []
+for _ in range(n):
+    a,b = map(int,input().split())
+    points.append([a,b])
+ans = sorted(points, key = lambda x: (x[0],x[1]))
+for i in range(n):    
+    print(ans[i][0],ans[i][1])
