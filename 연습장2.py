@@ -1,9 +1,17 @@
 
-n = int(input())
-points = []
-for _ in range(n):
-    a,b = map(int,input().split())
-    points.append([a,b])
-ans = sorted(points, key = lambda x: (x[0],x[1]))
-for i in range(n):    
-    print(ans[i][0],ans[i][1])
+
+
+# https://www.acmicpc.net/problem/9095
+
+# n=4
+# 숫자 2개
+# 3,1  / 2,2
+# 숫자 3개
+# 2,1,1
+# 숫자 4개
+# 1,1,1,1
+
+# n=5
+# 숫자 2개
+# 3,2
+# 
