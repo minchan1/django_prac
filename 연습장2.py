@@ -1,17 +1,7 @@
 
-
-
-# https://www.acmicpc.net/problem/9095
-
-# n=4
-# 숫자 2개
-# 3,1  / 2,2
-# 숫자 3개
-# 2,1,1
-# 숫자 4개
-# 1,1,1,1
-
-# n=5
-# 숫자 2개
-# 3,2
-# 
+import math
+n = int(input())
+for _ in range(n):
+    a,b = map(int,input().split())
+    k = math.lcm(a,b)
+    print(k)

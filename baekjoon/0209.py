@@ -9,3 +9,13 @@ def solution(A,B):
     for _ in range(len(A)):
         ans += A.popleft()*B.pop()
     return ans
+
+# 최소공배수
+# https://www.acmicpc.net/problem/1934
+
+import math
+n = int(input())
+for _ in range(n):
+    a,b = map(int,input().split())
+    k = math.lcm(a,b)
+    print(k)
