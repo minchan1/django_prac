@@ -13,3 +13,13 @@ if int(max(tmp)) == max(tmp):
     print(int(max(tmp)))
 else:
     print(int(max(tmp)+1))
+
+# https://programmers.co.kr/learn/courses/30/lessons/12945
+
+def solution(n):
+    Fibo = [0,1]
+    if n == 0 :
+        return 0
+    for i in range(n-1):
+        Fibo.append(Fibo[-1]+Fibo[-2])
+    return Fibo[-1]%1234567
