@@ -23,3 +23,29 @@ def solution(n):
     for i in range(n-1):
         Fibo.append(Fibo[-1]+Fibo[-2])
     return Fibo[-1]%1234567
+
+# https://www.acmicpc.net/problem/11728
+
+import sys
+n,m=map(int,sys.stdin.readline().split())
+list1 = list(map(int,sys.stdin.readline().split()))
+list2 = list(map(int,sys.stdin.readline().split()))
+tmp = list1 + list2
+tmp.sort()
+for i in tmp:
+    print(i,end=' ')
+
+# https://programmers.co.kr/learn/courses/30/lessons/42578
+
+def solution(clothes):
+    dict = {}
+    for cloth in clothes:
+        if cloth[1] in dict:
+            dict[cloth[1]] += 1
+        else:
+            dict[cloth[1]] = 1
+    tmp = list(dict.values())
+    ans = 1
+    for i in tmp:
+        ans = ans*(i+1)
+    return ans-1

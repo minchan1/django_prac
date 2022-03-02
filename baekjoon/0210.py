@@ -21,3 +21,4 @@ cnt = int(input())
 for _ in range(cnt):
     n,m = map(int,sys.stdin.readline().split())
     mCn(n,m)
+
